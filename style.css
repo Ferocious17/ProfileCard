@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+html, body
+{
+    width: 100%;
+
+    height: 100%;
+
+    margin: 0;
+
+    padding: 0;
+}
+
+*
+{
+    box-sizing: border-box;
+
+    font-family: 'Ubuntu';
+}
+
+body
+{
+    display: flex;
+
+    flex-direction: column;
+}
+
+header
+{
+    flex: 1.13;
+
+    background-color: navy;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    padding-left: 3%;
+
+    font-size: 33px;
+}
+
+main
+{
+    flex: 3.9;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+}
+
+.card
+{
+    position: relative;
+
+    width: 300px;
+
+    height: 400px;
+
+    overflow: hidden;
+
+    border-radius: 6px;
+
+    transition: all 0.4s;
+}
+
+.card::before
+{
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 100%;
+
+    height: 100%;
+
+    width: 75%;
+
+    background: rgba(255, 255, 255, 0.1);
+
+    z-index: 1;
+
+    transform: skew(45deg);
+
+    opacity: 0.7;
+
+    pointer-events: none;
+
+    transition: 0.5s;
+}
+
+.card:hover:before
+{
+    left: -100%;
+}
+
+.card:hover
+{
+    box-shadow: 1px 1px 6px 1px rgba(0, 0, 0, 0.3);
+}
+
+.card img
+{
+    height: 100%;
+
+    width: 100%;
+
+    filter: grayscale(100%);
+
+    transition: 0.2s;
+}
+
+.card:hover img
+{
+    filter: grayscale(0%);
+
+    transform: scale(1.1);
+}
+
+.card h3
+{
+    position: absolute;
+
+    bottom: 0;
+
+    width: 100%;
+
+    background: navy;
+
+    color: white;
+
+    padding: 9px;
+
+    user-select: none;
+
+    transform-origin: right;
+
+    transform: perspective(500px) rotateY(-90deg);
+
+    transition: all 0.5s;
+
+    margin-bottom: 0;
+}
+
+.card:hover h3
+{
+    transform: perspective(500px) rotateY(0deg);
+}
+
+ul li span
+{
+    position: absolute;
+
+    left: 10px;
+
+    font-size: 13px;
+
+    text-transform: uppercase;
+
+    background: #333;
+
+    color: lightblue;
+
+    border-left: none;
+
+    padding: 0 10px;
+
+    opacity: 0;
+
+    z-index: -1;
+
+    pointer-events: none;
+
+    transition: all 0.5s;
+}
+
+ul li:hover span
+{
+    left: 30px;
+
+    opacity: 1;
+
+    pointer-events: auto;
+}
+
+.card ul
+{
+    list-style: none;
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    background: rgba(225, 225, 225, 0);
+}
+
+.card ul li
+{
+    cursor: pointer;
+
+    height: 40px;
+
+    width: 40px;
+
+    line-height: 40px;
+
+    background: #333;
+
+    transform-origin: left;
+
+    transform: perspective(800px) rotateY(90deg);
+
+    transition: all 0.5s;
+}
+
+li
+{
+    margin-left: -39px;
+}
+
+.card:hover ul li:nth-child(1)
+{
+    transition-delay: 0.2s;
+}
+
+.card:hover ul li:nth-child(2)
+{
+    transition-delay: 0.6s;
+}
+
+.card:hover ul li:nth-child(3)
+{
+    transition-delay: 0.8s;
+}
+
+.card:hover ul li
+{
+    transform: perspective(800px) rotate(0deg);
+}
+
+.card ul li i
+{
+    font-size: 20px;
+
+    color: lightblue;
+
+    background: #333;
+}
+
+footer
+{
+    flex: 0.73;
+
+    background-color: navy;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 16px;
+}
